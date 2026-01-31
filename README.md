@@ -42,32 +42,45 @@ A machine learning project demonstrating data loading, preprocessing, and a simp
 
 ## Running Tests
 
-This project uses pytest for testing. To run the test suite:
+This project uses pytest for testing. **Important**: Always activate the virtual environment first before running tests.
+
+### Setup (required before running tests):
+```bash
+# Activate the virtual environment
+.venv\Scripts\activate
+```
 
 ### Basic test run:
 ```bash
-pytest
+python -m pytest
 ```
 
 ### Run with verbose output:
 ```bash
-pytest -v
+python -m pytest -v
 ```
 
 ### Run specific test file:
 ```bash
-pytest tests/test_model.py
+python -m pytest tests/test_model.py
 ```
 
 ### Run specific test:
 ```bash
-pytest tests/test_model.py::TestSimpleLinearRegression::test_fit -v
+python -m pytest tests/test_model.py::TestSimpleLinearRegression::test_fit -v
 ```
 
 ### Generate coverage report:
 ```bash
-pytest --cov=src --cov-report=html
+python -m pytest --cov=src --cov-report=html
 ```
+
+### Alternative (activate and run in one command):
+```bash
+.venv\Scripts\activate && python -m pytest
+```
+
+**Note**: If you encounter launcher errors with `pytest` command, always use `python -m pytest` instead.
 
 The test configuration in `pytest.ini` includes:
 - Coverage reporting (HTML and XML)
